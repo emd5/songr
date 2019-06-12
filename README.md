@@ -37,11 +37,14 @@ In terminal run: `./gradlew test`
 
 ## Features
 
+
 ### 6/12/19
 
-- [x] Ensure that you can run the Spring app.
-- [x] Create a hello world route at /hello, and ensure that you can visit that route in your browser and see data come back.
-- [x] Create a route that turns words into UPPER CASE. For instance, I should be able to visit /capitalize/hello and get back the response HELLO, or I could visit /capitalize/this is Kinda Capitalized and get the response THIS IS KINDA CAPITALIZED.
-- [x] Write a unit test for the capitalization functionality of that route.
-- [x] Create a route that reverses the order of the words in a query parameter. For example, if I visit /reverse?sentence=Hello world, it should return world Hello.
-- [x] Write a unit test for the word reversing functionality of the above route.
+    -[x] Ensure that you can run the Spring app.
+    -[x] Create a hello world route at /hello, and ensure that you can visit that route in your browser and see data 
+    come back.
+    -[x] Create a route that turns words into UPPER CASE. For instance, I should be able to visit /capitalize/hello and 
+    get back the response HELLO, or I could visit /capitalize/this is Kinda Capitalized and get the response THIS IS KINDA CAPITALIZED.
+    -[x] Write a unit test for the capitalization functionality of that route.
+    -[x] Create a route that reverses the order of the words in a query parameter. For example, if I visit /reverse?sentence=Hello world, it should return world Hello.
+    -[x] Write a unit test for the word reversing functionality of the above route.
