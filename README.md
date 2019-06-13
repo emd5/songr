@@ -28,7 +28,6 @@ Liz Mahoney
 
 In terminal run: `./gradlew bootrun`
 
-
 ***To view gradle commands***
 
 In terminal run: `./gradlew tasks`
@@ -39,7 +38,14 @@ In terminal run: `./gradlew test`
 
 ## Features
 
-### 6
+### 6/13/19
+
+    -[x] Create an Album model.
+    -[x] An Album has a title, an artist, a songCount, a length (in seconds), and an imageUrl that is a link to that 
+    album’s art.
+    -[x] A user should be able to see information about all the albums on the site.
+    -[x] A user should be able to add albums to the site.
+
 ### 6/12/19
 
     -[x] Ensure that you can run the Spring app.
@@ -50,3 +56,11 @@ In terminal run: `./gradlew test`
     -[x] Write a unit test for the capitalization functionality of that route.
     -[x] Create a route that reverses the order of the words in a query parameter. For example, if I visit /reverse?sentence=Hello world, it should return world Hello.
     -[x] Write a unit test for the word reversing functionality of the above route.
+
+## Resources
+
+Handling Form Submission - https://spring.io/guides/gs/handling-form-submission/
+
+Using Thymeleaf - https://www.thymeleaf.org/doc/tutorials/2.1/usingthymeleaf.html#iteration-basics
+
+Serving Web Content with Spring MVC - https://spring.io/guides/gs/serving-web-content/
