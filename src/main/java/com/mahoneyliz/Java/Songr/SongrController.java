@@ -65,7 +65,7 @@ public class SongrController {
             reverseSentence.append(words[i]);
             reverseSentence.append(" ");
         }
-        return String.valueOf(reverseSentence).trim();
+        return reverseSentence.toString().trim();
     }
 }
 

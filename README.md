@@ -39,7 +39,7 @@ In terminal run: `./gradlew test`
 
 ## Features
 
-
+### 6
 ### 6/12/19
 
     -[x] Ensure that you can run the Spring app.
