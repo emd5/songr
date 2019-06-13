@@ -49,8 +49,4 @@ public class Album {
         return this.imageUrl;
     }
 
-
-
-
-
 }
