@@ -26,6 +26,5 @@ public class AlbumController {
         System.out.println(newAlbum.artist);
         albumRepository.save(newAlbum);
         return new RedirectView("/albums");
-//        return "redirect:/albums";
     }
 }
