@@ -21,7 +21,10 @@ public class Album {
     long length;
     String imageUrl;
 
-    public Album( String title, String artist, int songCount, long length, String imageUrl) {
+    public  Album(){
+    }
+
+    public Album(String title, String artist, int songCount, long length, String imageUrl) {
         this.title = title;
         this.artist = artist;
         this.songCount = songCount;
@@ -47,6 +50,26 @@ public class Album {
 
     public String getImageUrl() {
         return this.imageUrl;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setArtist(String artist) {
+        this.artist = artist;
+    }
+
+    public void setSongCount(int songCount) {
+        this.songCount = songCount;
+    }
+
+    public void setLength(long length) {
+        this.length = length;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
 }
