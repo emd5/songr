@@ -12,8 +12,9 @@ public class SongController {
     SongRepository songRepository;
 
     @GetMapping("/songs")
-    public String index(Model m) {
-        m.addAttribute("songs", songRepository.findAll());
-        return "songs";
+    public String getAllSongs(Model m) {
+        Iterable<Song> songs = songRepository.findAll();
+        m.addAttribute("songs", songs);
+        return "song";
     }
 }

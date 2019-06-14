@@ -38,6 +38,17 @@ In terminal run: `./gradlew test`
 
 ## Features
 
+### 6/14/19
+
+    -[x] Create a Song model.
+        -[x] A Song has a title, a length (in seconds), a trackNumber, and the album on which that song appears.
+    -[x] Ensure that the relationship between Albums and Songs is appropriately set up.
+        -[x] A user should be able to see information about all the songs on the site.
+        -[x] A user should be able to view a page with data about one particular album.
+        -[x] A user should be able to add songs to an album.
+        -[x] A user should be able to see the songs that belong to an album when looking at that album.
+
+
 ### 6/13/19
 
     -[x] Create an Album model.

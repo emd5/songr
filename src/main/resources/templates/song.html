@@ -1,16 +1,18 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>A List of Albums</title>
+    <title>List of Pages</title>
 </head>
 <body>
 
-    <h1>Check out Songs</h1>
+
+    <h1>List of Songs</h1>
     <ul>
-        <li th:each="song: ${songs}">
-            <span th:text="${song.title}"></span>
-            ( <span th:text="${song.length}"></span>)
-            ( <span th:text="${song.trackNumber}"></span>)
+        <li th:each="song : ${songs}">
+            <span th:text="${song}"></span>
         </li>
     </ul>
+
+    <h1><button href="/albums">All Albums</button> | <button href="/">Home</button></h1>
+
 </body>
 </html>

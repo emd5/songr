@@ -2,29 +2,32 @@
 <head>
     <title>A List of Albums</title>
 </head>
-<body>
+    <body>
 
-    <h1>Form</h1>
-    <form th:action="@{/albums}" th:object="${newAlbum}" method="post">
-        <p>Artist: <input type="text" th:field="*{title}" /></p>
-        <p>Title: <input type="text" th:field="*{artist}" /></p>
-        <p>SongCount: <input type="text" th:field="*{songCount}" /></p>
-        <p>Length: <input type="text" th:field="*{length}" /></p>
-        <p>Album Image: <input type="text" th:field="*{imageUrl}" /></p>
+        <h1>Form</h1>
+        <form th:action="@{/albums}" th:object="${newAlbum}" method="post">
+            <p>Artist: <input type="text" th:field="*{title}" /></p>
+            <p>Title: <input type="text" th:field="*{artist}" /></p>
+            <p>SongCount: <input type="text" th:field="*{songCount}" /></p>
+            <p>Length: <input type="text" th:field="*{length}" /></p>
+            <p>Album Image: <input type="text" th:field="*{imageUrl}" /></p>
 
-        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
-    </form>
+            <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+        </form>
 
 
-    <h1>Check out the list of Albums</h1>
-    <ul>
-        <li th:each="album : ${albums}">
-            <span th:text="${album.title}"></span>
-            ( <span th:text="${album.artist}"></span>)
-            ( <span th:text="${album.songCount}"></span>)
-            ( <span th:text="${album.length}"></span>)
-            <img th:src="${album.imageUrl}" th:alt="${album.artist}" height="42" width="42">
-        </li>
-    </ul>
-</body>
+        <h1>Check out the list of Albums</h1>
+        <ul>
+            <li th:each="album : ${albums}">
+                <span th:text="${album.title}"></span>
+                ( <span th:text="${album.artist}"></span>)
+                ( <span th:text="${album.songCount}"></span>)
+                ( <span th:text="${album.length}"></span>)
+                <img th:src="${album.imageUrl}" th:alt="${album.artist}" height="42" width="42">
+
+                <a th:href="@{'/albumDetail/' + ${album.id}}" >View Details</a>
+            </li>
+        </ul>
+
+    </body>
 </html>

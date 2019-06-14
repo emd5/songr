@@ -2,6 +2,7 @@ package com.mahoneyliz.Java.Songr;
 
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * The Album Model Class
@@ -21,8 +22,7 @@ public class Album {
     @OneToMany(mappedBy="album")
     public List<Song> songs;
 
-    public  Album(){
-    }
+    public  Album(){ }
 
     public Album(String title, String artist, int songCount, long length, String imageUrl) {
         this.title = title;
@@ -32,25 +32,19 @@ public class Album {
         this.imageUrl = imageUrl;
     }
 
-    public String getTitle() {
-        return this.title;
-    }
+    public long getId(){ return this.id; }
 
-    public String getArtist() {
-        return this.artist;
-    }
+    public String getTitle() { return this.title; }
 
-    public int getSongCount() {
-        return this.songCount;
-    }
+    public String getArtist() { return this.artist; }
 
-    public long getLength() {
-        return this.length;
-    }
+    public int getSongCount() { return this.songCount; }
 
-    public String getImageUrl() {
-        return this.imageUrl;
-    }
+    public long getLength() { return this.length; }
+
+    public String getImageUrl() { return this.imageUrl; }
+
+    public List<Song> getSongs() { return this.songs; }
 
     public void setTitle(String title) {
         this.title = title;
