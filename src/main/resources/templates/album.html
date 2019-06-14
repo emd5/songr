@@ -4,7 +4,7 @@
 </head>
     <body>
 
-        <h1>Form</h1>
+        <h1>Add an album</h1>
         <form th:action="@{/albums}" th:object="${newAlbum}" method="post">
             <p>Artist: <input type="text" th:field="*{title}" /></p>
             <p>Title: <input type="text" th:field="*{artist}" /></p>

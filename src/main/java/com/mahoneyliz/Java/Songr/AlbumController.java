@@ -42,13 +42,16 @@ public class AlbumController {
     }
 
     @PostMapping("/albumDetail/{id}")
-    public String songSubmit(@PathVariable Long id , @RequestParam String title, @RequestParam int length,
-                                   @RequestParam int trackNumber){
+    public String songSubmit(@PathVariable Long id , @RequestParam String title, @RequestParam int length, @RequestParam int trackNumber){
         Album a = albumRepository.findById(id).get();
         Song newSong = new Song(title,length,trackNumber, a);
         songRepository.save(newSong);
         return "redirect:/albumDetail/{id}";
     }
+
+
+
+
 
 
 
