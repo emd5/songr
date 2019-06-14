@@ -1,10 +1,7 @@
 package com.mahoneyliz.Java.Songr;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * The Album Model Class
@@ -20,6 +17,9 @@ public class Album {
     int songCount;
     long length;
     String imageUrl;
+
+    @OneToMany(mappedBy="album")
+    public List<Song> songs;
 
     public  Album(){
     }
