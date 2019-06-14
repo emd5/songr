@@ -1,0 +1,16 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>List of Pages</title>
+</head>
+<body>
+    <h1>List of Songs</h1>
+    <ul>
+        <li th:each="song : ${songs}">
+            <span th:text="${song}"></span>
+        </li>
+    </ul>
+
+    <h1><a href="/albums">All Albums Page</a> | <a href="/">Home</a></h1>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Album Details page</title>
+</head>
+<body>
+
+    <p><img th:src="${oneAlbum.imageUrl}" th:alt="${oneAlbum.artist}" height="80" width="80"></p>
+    <p>Title: <span th:text="${oneAlbum.title}"></span></p>
+    <p>Artist:<span th:text="${oneAlbum.artist}"></span></p>
+    <p>Song Count: <span th:text="${oneAlbum.songCount}"></span></p>
+    <p>Song Length: <span th:text="${oneAlbum.length}"></span></p>
+
+    <hr>
+
+    <h1>Add Songs</h1>
+    <form th:action="@{'/albumDetail/'+${oneAlbum.id}}" method="POST">
+        Song Title: <input name="title" /><br />
+        Track No. : <input name="length" /><br />
+        Length: <input name="trackNumber" />(in seconds)<br />
+        <input type="submit" /><br />
+    </form>
+
+    <h1>List of Songs In this Album</h1>
+    <ul>
+        <li th:each="song : ${oneAlbum.songs}">
+            <span th:text="${song.title}"></span>
+            <span th:text="${song.length}"></span>
+            <span th:text="${song.trackNumber}"></span>
+
+        </li>
+    </ul>
+
+    <h1><a href="/albums">All Albums Page</a> | <a href="/">Home</a></h1>
+
+</body>
+</html>
+
+

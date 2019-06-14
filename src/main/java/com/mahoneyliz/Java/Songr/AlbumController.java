@@ -11,6 +11,8 @@ public class AlbumController {
 
     @Autowired
     AlbumRepository albumRepository;
+    @Autowired
+    SongRepository songRepository;
 
     @GetMapping("/albums")
     public String getAllAlbums(Model m){
@@ -23,8 +25,35 @@ public class AlbumController {
 
     @PostMapping("/albums")
      public RedirectView albumSubmit(@ModelAttribute Album newAlbum){
-        System.out.println(newAlbum.artist);
         albumRepository.save(newAlbum);
         return new RedirectView("/albums");
     }
+
+    @GetMapping("/albumDetail/{id}")
+    public String getOneAlbum(@PathVariable Long id, Model m){
+
+        //adding song to the list
+        m.addAttribute("oneSong", new Song());
+
+        Album a = albumRepository.findById(id).get();
+        m.addAttribute("oneAlbum", a);
+
+        return "albumDetails";
+    }
+
+    @PostMapping("/albumDetail/{id}")
+    public String songSubmit(@PathVariable Long id , @RequestParam String title, @RequestParam int length, @RequestParam int trackNumber){
+        Album a = albumRepository.findById(id).get();
+        Song newSong = new Song(title,length,trackNumber, a);
+        songRepository.save(newSong);
+        return "redirect:/albumDetail/{id}";
+    }
+
+
+
+
+
+
+
+
 }
