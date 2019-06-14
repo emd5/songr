@@ -1,0 +1,18 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Update Song</title>
+</head>
+<body>
+    <h1>Update Song</h1>
+
+    <form th:action="@{'/updateSong/'+${oneSong.id}}" method="POST">
+        Song Title: <input name="title" th:value="${oneSong.title}"/><br />
+        Track No. : <input name="length" th:value=${oneSong.length}"/><br />
+        Length: <input name="trackNumber" th:value=${oneSong.trackNumber}"/>(in seconds)<br />
+        <input type="submit" />
+    </form>
+
+    <h1><a href="/albums">All Albums Page</a> | <a href="/">Home</a></h1>
+
+</body>
+</html>

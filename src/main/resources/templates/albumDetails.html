@@ -23,9 +23,11 @@
     <h1>List of Songs In this Album</h1>
     <ul>
         <li th:each="song : ${oneAlbum.songs}">
-            <span th:text="${song.title}"></span>
+            <span th:text="${song.title}"> </span>
             <span th:text="${song.length}"></span>
             <span th:text="${song.trackNumber}"></span>
+            <a th:href="@{'/updateSong' + ${song.oneAlbum.id}}">Update</a>
+            <a th:href="@{'/deleteSong' + ${song.oneAlbum.id}}">Delete</a>
 
         </li>
     </ul>

@@ -6,6 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
+import java.util.Optional;
+
 @Controller
 public class AlbumController {
 
@@ -48,6 +50,21 @@ public class AlbumController {
         songRepository.save(newSong);
         return "redirect:/albumDetail/{id}";
     }
+
+//    @GetMapping("/updateSong/{id}")
+//    public String updateSong(@PathVariable Long id, @RequestParam String title, @RequestParam int length, @RequestParam int trackNumber){
+//
+//        return "updateSong";
+//    }
+//
+//    @PostMapping("/updateSong/{id}")
+//    public String updatePost(@PathVariable Long id, @RequestParam String title, @RequestParam int length, @RequestParam int trackNumber){
+//
+//        return "redirect:/albumDetail/{id}";
+//    }
+
+
+    //@get for delete
 
 
 
