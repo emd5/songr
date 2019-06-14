@@ -48,7 +48,6 @@ In terminal run: `./gradlew test`
         -[x] A user should be able to add songs to an album.
         -[x] A user should be able to see the songs that belong to an album when looking at that album.
 
-
 ### 6/13/19
 
     -[x] Create an Album model.

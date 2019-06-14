@@ -7,7 +7,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
  * The songr controller class
  */
 @RestController
-public class SongrController {
+public class HelloController {
 
     /**
      * Create a hello world route at /hello, and ensure that you can visit that route in your browser and see data
