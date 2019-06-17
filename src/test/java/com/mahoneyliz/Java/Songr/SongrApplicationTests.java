@@ -38,5 +38,14 @@ public class SongrApplicationTests {
 		mockMvc.perform(get("/hello")).andExpect(content().string(containsString("Hello World!")));
 	}
 
+	@Test
+	public void testRequestToCapitalize() throws Exception {
+		mockMvc.perform(get("/capitalize/hello")).andExpect(content().string(containsString("HELLO")));
+	}
+	@Test
+	public void testRequestToReverse() throws Exception {
+		mockMvc.perform(get("/reverse?word=hello world")).andExpect(content().string(containsString("world hello")));
+	}
+
 
 }

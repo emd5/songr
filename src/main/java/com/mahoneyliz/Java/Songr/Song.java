@@ -22,7 +22,7 @@ public class Song {
         this.title = title;
         this.length = length;
         this.trackNumber = trackNumber;
-        this.album=album;
+        this.album= album;
     }
 
     public long getId(){ return id; }
