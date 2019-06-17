@@ -1,4 +1,4 @@
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <title>Album Details page</title>
 </head>
@@ -21,18 +21,32 @@
     </form>
 
     <h1>List of Songs In this Album</h1>
-    <ul>
-        <li th:each="song : ${oneAlbum.songs}">
-            <span th:text="${song.title}"> </span>
-            <span th:text="${song.length}"></span>
-            <span th:text="${song.trackNumber}"></span>
-            <a th:href="@{'/updateSong' + ${song.oneAlbum.id}}">Update</a>
-            <a th:href="@{'/deleteSong' + ${song.oneAlbum.id}}">Delete</a>
+        <table>
+            <thead>
+                <th colspan="30">Title</th>
+                <th colspan="10">Length</th>
+                <th colspan="10">Track Number</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </thead>
+            <tbody>
+             <tr th:if="${oneAlbum.songs.empty}">
+                <td colspan="5"> No songs in this album. Please add above! </td>
+            </tr>
 
-        </li>
-    </ul>
+            <tr th:each="song : ${oneAlbum.songs}">
+                <td colspan="30" th:text="${song.title}"></td>
+                <td colspan="10" th:text="${song.length}"></td>
+                <td colspan="10" th:text="${song.trackNumber}"></td>
+                <td> <a th:href="@{'/updateSong/' + ${song.id}}">Update</a></td>
+                <td> <a th:href="@{'/deleteSong/' + ${song.id}}">Delete</a></td>
+            </tr>
 
-    <h1><a href="/albums">All Albums Page</a> | <a href="/">Home</a></h1>
+            </tbody>
+
+        </table>
+
+    <button><a href="/albums">All Albums Page</a></button> | <button><a href="/">Home</a></button>
 
 </body>
 </html>

@@ -51,26 +51,29 @@ public class AlbumController {
         return "redirect:/albumDetail/{id}";
     }
 
-//    @GetMapping("/updateSong/{id}")
-//    public String updateSong(@PathVariable Long id, @RequestParam String title, @RequestParam int length, @RequestParam int trackNumber){
-//
-//        return "updateSong";
-//    }
-//
-//    @PostMapping("/updateSong/{id}")
-//    public String updatePost(@PathVariable Long id, @RequestParam String title, @RequestParam int length, @RequestParam int trackNumber){
-//
-//        return "redirect:/albumDetail/{id}";
-//    }
+    @GetMapping("/updateSong/{id}")
+    public String updateSong(@PathVariable Long id, Model m){
+        Song s = songRepository.findById(id).get();
+        m.addAttribute("oneSong", s);
+        return "updateSong";
+    }
 
+    @PostMapping("/updateSong/{id}")
+    public String updateSong(@PathVariable Long id, @RequestParam String title, @RequestParam int length,
+                           @RequestParam int trackNumber){
+        Song s = songRepository.findById(id).get();
+        s.setTitle(title);
+        s.setLength(length);
+        s.setTrackNumber(trackNumber);
+        songRepository.save(s);
+        return "redirect:/albumDetail/{id}";
+    }
 
-    //@get for delete
-
-
-
-
-
-
-
+    @GetMapping("/deleteSong/{id}")
+    public String deleteSong(@PathVariable Long id){
+        Song s = songRepository.findById(id).get();
+        songRepository.delete(s);
+        return "redirect:/albumDetail/{id}";
+    }
 
 }
